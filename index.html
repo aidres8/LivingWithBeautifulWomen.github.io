@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sidebar Navigation Example</title>
-  <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/yy.css">
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>YY</title>
 </head>
+
 <body>
   <nav class="top-nav">
-    <!-- Top navigation content -->
-    <ul>
+    <button class="hamburger" aria-label="Menu"><a href="#"></a><i class="fas fa-bars"></i></button>
+    <ul class="nav_horizental">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
-
+  
   <aside class="sidebar" aria-label="Main Navigation">
     <!-- Sidebar content -->
     <ul>
@@ -26,12 +29,13 @@
   </aside>
   
   <section class="main-content">
-    <!-- Content area to be dynamically updated -->
-    <div id="content1" class="content">Content for Menu 1</div>
-    <div id="content2" class="content">Content for Menu 2</div>
-    <div id="content3" class="content">Content for Menu 3</div>
-  </section>
+    <!-- Default content -->
+    <div id="content0" class="content"><h2>Welcome</h2><p>This is all about Java and Python.</p></div>
+    <div id="content1" class="content" style="display: none;">Content for Menu 1</div>
+    <div id="content2" class="content" style="display: none;">Content for Menu 2</div>
+    <div id="content3" class="content" style="display: none;">Content for Menu 3</div>
+</section>
 
-  <script src="basic.js"></script>
+  <script src="js/yy.js"></script>
 </body>
 </html>
