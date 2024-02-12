@@ -9,10 +9,9 @@ comments: true
 <div class="post-content">
 
     {% if page.summary %}
-    <div class="summary">
-        <!-- https://github.com/jekyll/jekyll/issues/3571 -->
-        {{ page.summary | markdownify | remove: '<p>' | remove: '</p>' }}
-    </div>
+    <div class="summary">{{page.summary}}</div>
     {% endif %}
     {{ content }}
 </div>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}

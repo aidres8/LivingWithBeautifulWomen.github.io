@@ -7,7 +7,7 @@ $( document ).ready(function() {
     // position as your scroll. if you have a lot of nav items, this height may not work for you.
     var h = $(window).height();
     //console.log (h);
-    if (h > 700) {
+    if (h > 800) {
         $( "#mysidebar" ).attr("class", "nav affix");
     }
     // activate tooltips. although this is a bootstrap js function, it must be activated this way in your theme.
@@ -18,7 +18,7 @@ $( document ).ready(function() {
     /**
      * AnchorJS
      */
-    anchors.add('h2:not(.no-anchor),h3:not(.no-anchor),h4:not(.no-anchor),h5:not(.no-anchor)');
+    anchors.add('h2,h3,h4,h5');
 
 });
 

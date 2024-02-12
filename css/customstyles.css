@@ -1,3 +1,7 @@
+body {
+    font-size:15px;
+}
+
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -80,14 +84,6 @@ margin-top: -40px
 }
 
 .post-content img {
-    margin: 12px 0px 3px 0px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.post-content video {
     margin: 12px 0px 3px 0px;
     width: auto;
     height: auto;
@@ -208,9 +204,10 @@ p.post-meta {font-size: 80%; color: #777;}
     top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
     left: 20px;
     z-index: -1;
-    width: 300px;
+    width:223px;
     border-left: 1px solid #dedede;
 }
+
 
 ul#results-container a {
     background-color: transparent;
@@ -221,7 +218,7 @@ ul#results-container a:hover {
 }
 
 
-/*#search-demo-container a:hover {
+#search-demo-container a:hover {
     color: black;
 }
 #search-input {
@@ -232,9 +229,8 @@ ul#results-container a:hover {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin-top: 7px;
-    border-color: #0A76BB;
-}*/
+    margin-top:10px;
+}
 /* end search */
 
 .filter-options {
@@ -252,8 +248,8 @@ div#toc ul li {
 div#toc ul {
     background-color: whitesmoke;
     padding: 5px;
-    border-radius: 4px;
-    max-width: 600px;
+    border-radius: 5px;
+    max-width: 300px;
     color: gray;
 }
 
@@ -329,9 +325,6 @@ a.accordion-toggle, a.accordion-collapsed {
     margin: 0px;
 }
 
-.nav.navbar-nav > li {
-    margin: 0;
-}
 .nav > li {
     margin: 1px 0;
 }
@@ -341,10 +334,8 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav a {
-    /*color: #333;*/
-    color: rgb(38,38,38);
+    color: #333;
     display: block;
-    outline: none;
     /*-webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;*/
@@ -378,8 +369,7 @@ background-color: #347DBE;
     font-size: 12px;
     line-height: 18px;
     padding: 2px 10px;
-    /*background-color: #f1f1f1;*/
-    background-color: rgb(232, 232, 232);
+    background-color: #f1f1f1;
 }
 
 .nav > li > a {
@@ -418,21 +408,21 @@ ul#mysidebar {
 
 .nav ul li a {
     border-top:1px solid whitesmoke;
-    padding-left:20px;
+    padding-left:10px;
 }
 /* end sidebar */
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    border-radius:4px;
+    border-radius:5px;
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 span.projectTitle {
-    /*font-family: Helvetica;*/
-    font-weight: 500;
+    font-family: Helvetica;
+    font-weight: bold;
 }
 
 .footer {
@@ -443,7 +433,7 @@ span.projectTitle {
     background-color: whitesmoke;
     padding: 10px;
     max-width: 250px;
-    border-radius: 4px;
+    border-radius: 5px;
     margin-top: 50px;
     font-style:italic;
     font-size:12px;
@@ -545,6 +535,10 @@ button.cursorNorm {
 
 a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
     margin-left: 10px;
+}
+
+.navbar a:focus {
+    outline: 1px solid #fff;
 }
 
 hr.faded {
@@ -806,8 +800,8 @@ dd {margin-left:20px;}
 }
 
 .alert {
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom:10px;
+    margin-top:10px;
 }
 
 a.accordion-toggle {
@@ -915,12 +909,12 @@ span.soft {
 }
 
 
-/*@media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
+@media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
         max-width: 700px;
         max-height: 700px;
     }
-}*/
+}
 
 *:hover > .anchorjs-link {
     transition: color .25s linear;
@@ -934,12 +928,10 @@ span.soft {
 }
 
 /* this part adds an icon after external links, using FontAwesome*/
-/* Bug in FontAwesome 5: https://github.com/FortAwesome/Font-Awesome/issues/11946 */
-/* Edited this part because it's better to not show the icon in the first place */
-a:not(.no-icon)[href^="http://"]:after, a:not(.no-icon)[href^="https://"]:after, a:not(.no-icon)[href^="ftp://"]:after {
-    content: "\f35d";
-    font-family: "Font Awesome\ 5 Free";
-    font-weight: 900;
+a[href^="http://"]:after, a[href^="https://"]:after {
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-weight: normal;
     font-style: normal;
     display: inline-block;
     text-decoration: none;
@@ -955,7 +947,7 @@ a.no_icon:after
 }
 
 .btn-default {
-    /*margin-bottom: 10px;*/
+    margin-bottom: 10px;
 }
 
 /* algolia search */
@@ -1208,9 +1200,4 @@ h4.panel-title {
     .collapse.in{
         display:block !important;
     }
-}
-
-/* News banner on pages other than the landing page */
-.banner {
-  padding: 15px 0;
 }
