@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{list-style: none;text-decoration: none;margin: 0;padding: 0;box-sizing: border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+body{background: #f5f6fa;}
+
+.sidebar{background: #11101d; position: fixed;top: 0;left: 0;height: 100%;width: 260px;z-index: 100;transition: all 0.5s ease;}
+.sidebar.close{width: 78px;}
+.sidebar .profile{margin-bottom: 30px;text-align: center;}
+.sidebar .profile img{display:block;width:150px;height:72px;border: radius 50%;margin:0 auto;}
+.sidebar .profile h1{color: #ffffff;margin: 10px 0 0px;font-size: 36px}
+.sidebar .profile p{color: rgb(206, 240, 253);font-size: 20px}
+
+
+
+.sidebar ul li a{display: block; padding: 10px 30px;border-bottom: 1px solid #10558d;color: rgb(241,237,237);font-size: 16px;position: relative;}
+.sidebar .ii{height:20px; text-align: top;line-height: 0px;color: #fff;font-size: 20px;cursor: pointer;transition: all 0.3s ease;right:10px;position: absolute;transform: translateY(-100%);}
+.sidebar ul li a .icon{color: #dee4ec;width: 30px;display: inline-block;}
+.sidebar ul li a:hover,.sidebar ul li a.active{color: #0c7db1;background: white;border-right: 2px solid rgb(5,68,104);}
+.sidebar ul li a:hover .icon,.sidebar ul li a.active .icon{color: #0c7db1;}
+.sidebar ul li a:hover:before,.sidebar ul li a.active:before{display: block;}
+
+.sidebar li.showMenu i.arrow{transform: rotate(-180deg);}
+/* .sidebar.close i.arrow{display: none;} */
+
+.sidebar .nav-links{height: 100%;padding: 30px 0 150px 0;overflow: auto;}
+.sidebar.close .nav-links{overflow: visible;}
+.sidebar .nav-links::-webkit-scrollbar{display: auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-content {
+  margin-left: 250px; /* Sidebar width (200px) + margin (20px) */
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+
+  padding: 12px;
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+
+.home-content{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+}
+.home-section .home-content .bx-menu{
+  cursor: pointer;
+  margin-right: 10px;
+}
+.home-section .home-content .text{
+  font-size: 26px;
+  font-weight: 600;
+}
