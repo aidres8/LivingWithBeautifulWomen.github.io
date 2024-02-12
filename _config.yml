@@ -1,0 +1,259 @@
+repository: precice/precice.github.io_future
+
+output: web
+# this property is useful for conditional filtering of content that is separate from the PDF.
+
+topnav_title: preCICE
+# this appears on the top navigation bar next to the home button
+
+site_title: preCICE - The Coupling Library
+# this appears in the html browser tab for the site title (seen mostly by search engines, not users)
+
+company_name: preCICE
+# this appears in the footer
+
+github_editme_path: https://github.com/precice/precice.github.io_future/edit/master/
+# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank. Ends in trailing slash.
+
+# gitlab_editme_path: tomjoht/documentation-theme-jekyll/edit/gh-pages/
+# if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+
+google_analytics:
+# if you have google-analytics ID, put it in. if not, edit this value to blank.
+
+host: 127.0.0.1
+# the preview server used. Leave as is.
+
+port: 4000
+# the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
+
+exclude:
+  - .idea/
+  - .gitignore
+  - vendor/
+  - vendor/bundle/
+  - imported
+  - README.md
+  - var/
+  - pdf/
+  - createtag
+  - pdf-docs.sh
+# these are the files and directories that jekyll will exclude from the build
+
+feedback_subject_line: XXX
+
+feedback_email: email
+# used as a contact email for the Feedback link in the top navigation bar
+
+# feedback_disable: true
+# if you uncomment the previous line, the Feedback link gets removed
+
+# feedback_text: "Need help?"
+# if you uncomment the previous line, it changes the Feedback text
+
+# feedback_link: "http://helpy.io/"
+# if you uncomment the previous line, it changes where the feedback link points to
+
+highlighter: rouge
+# library used for syntax highlighting
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+  # math_engine: katex
+  # math_engine_opts: {}
+# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+
+
+collections_dir: collections
+collections:
+  - testimonials
+  - publications
+  # tooltips:
+  #   output: false
+# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
+
+defaults:
+  -
+    scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: home_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: "pages/docs"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: docs_sidebar
+      topnav: topnav
+      toc: true
+  -
+    scope:
+      path: "pages/tutorials"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: tutorial_sidebar
+      topnav: topnav
+      toc: true
+  -
+    scope:
+      path: "imported/tutorials/"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: tutorial_sidebar
+      topnav: topnav
+      toc: true
+      github_editme_path: https://github.com/precice/tutorials/edit/develop/ # ends in /
+  -
+    scope:
+      path: "imported/openfoam-adapter/"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: docs_sidebar
+      topnav: topnav
+      toc: true
+      github_editme_path: https://github.com/precice/openfoam-adapter/edit/develop/ # ends in /
+  -
+    scope:
+      path: "imported/aste/"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: docs_sidebar
+      topnav: topnav
+      toc: true
+      github_editme_path: https://github.com/precice/aste/edit/develop/ # ends in /
+  -
+    scope:
+      path: "imported/micro-manager/"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: docs_sidebar
+      topnav: topnav
+      toc: true
+      github_editme_path: https://github.com/precice/micro-manager/edit/develop/ # ends in /
+  -
+    scope:
+      path: "imported/fmi-runner/"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: docs_sidebar
+      topnav: topnav
+      toc: true
+      github_editme_path: https://github.com/precice/fmi-runner/edit/develop/ # ends in /
+  -
+    scope:
+      path: "pages/community"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: community_sidebar
+      topnav: topnav
+      toc: true
+
+# these are defaults used for the frontmatter for these file types
+
+sidebars:
+- home_sidebar
+- docs_sidebar
+- tutorials_sidebar
+- community_sidebar
+
+description: "preCICE (Precise Code Interaction Coupling Environment) is an open-source coupling library for partitioned simulations of multi-physics scenarios such as fluid-structure interaction or fluid-structure-acoustic interaction."
+
+# the description is used in the feed.xml file
+
+# needed for sitemap.xml file only
+url: https://precice.org
+# baseurl: /documentation-theme-jekyll
+
+github: [metadata]
+
+algolia:
+  application_id: I5M4FAJYBH
+  index_name:     jekyll
+  search_only_api_key: d6f8d2f113bc342ee3f42421d0153bad
+  nodes_to_index: 'p,code,table' # html tags to include in search index
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+subprojects:
+  - imported/tutorials/quickstart
+  - imported/tutorials/elastic-tube-1d
+  - imported/tutorials/elastic-tube-3d
+  - imported/tutorials/flow-over-heated-plate
+  - imported/tutorials/flow-over-heated-plate-steady-state
+  - imported/tutorials/flow-over-heated-plate-nearest-projection
+  - imported/tutorials/flow-over-heated-plate-two-meshes
+  - imported/tutorials/heat-exchanger
+  - imported/tutorials/heat-exchanger-simplified
+  - imported/tutorials/multiple-perpendicular-flaps
+  - imported/tutorials/partitioned-elastic-beam
+  - imported/tutorials/partitioned-heat-conduction
+  - imported/tutorials/partitioned-heat-conduction-complex
+  - imported/tutorials/partitioned-heat-conduction-direct
+  - imported/tutorials/oscillator
+  - imported/tutorials/perpendicular-flap
+  - imported/tutorials/turek-hron-fsi3
+  - imported/tutorials/partitioned-pipe
+  - imported/tutorials/partitioned-backwards-facing-step
+  - imported/tutorials/flow-over-heated-plate-partitioned-flow
+  - imported/tutorials/volume-coupled-diffusion
+  - imported/tutorials/channel-transport
+  - imported/tutorials/channel-transport-reaction
+  - imported/tutorials/aste-turbine
+  - imported/tutorials/tools/tests
+  - imported/openfoam-adapter/docs
+  - imported/micro-manager/docs
+  - imported/fmi-runner/docs
+  - imported/aste/docs
+
+# We use these versions to centrally update links
+# and other version-specific information.
+# Note that Jekyll cuts off trailing zeros: https://stackoverflow.com/questions/37862167/trailing-zeros-in-jekyll-liquid
+precice_version: 2.5.0
+calculix_version: "2.20"
+calculix_adapter_version: "2.20.0"
+
+# This url is so bugprone that we keep it centrally here
+matrix_url: "https://matrix.to/#/#precice_lobby:gitter.im?web-instance[element.io]=app.gitter.im"
+
+# Latest known number of Google scholar citations, used as fallback
+precice_citations: 222
