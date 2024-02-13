@@ -1,46 +1,106 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sidebarLinks = document.querySelectorAll('.sidebar-link');
-    const defaultContent = document.getElementById('content0');
-    
-    // Function to show default content
-    function showDefaultContent() {
-        defaultContent.style.display = 'block'; // Display default content
-    }
-    
-    // Show default content when the page loads
-    showDefaultContent();
-    
-    // Event listeners for sidebar links
-    sidebarLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const contentId = this.getAttribute('data-content');
-            const contents = document.querySelectorAll('.content');
-            
-            // Hide default content
-            defaultContent.style.display = 'none';
-            
-            // Fetch content from text file
-            fetch(contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
-                .then(response => response.text())
-                .then(text => {
-                    // Show the clicked content
-                    console.log('Clicked link with data-content:', contentId);
-                    const contentElement = document.getElementById(contentId);
-                    contentElement.innerHTML = text;
-                    contentElement.style.display = 'block';
-                })
-                .catch(error => console.error('Error fetching content:', error));
-            
-            // Hide other contents
-            contents.forEach(function(content) {
-                if (content.id !== contentId) {
-                    content.style.display = 'none';
-                }
-            });
-        });
+  const sidebarLinks   = document.querySelectorAll('.sidebar-link');
+  const txtContents    = document.querySelectorAll('.txt');
+  const defaultContent = document.getElementById('content0');
+  
+  function showDefaultContent() {defaultContent.style.display = 'block'; }
+  showDefaultContent();
+
+  sidebarLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const contentId = this.getAttribute('data-content');
+      const contents = document.querySelectorAll('.content');
+
+      defaultContent.style.display = 'none';
+
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      const firstLineContent = document.getElementById(contentId).querySelector('h6').textContent.trim();
+      // Assigning the content to the span element
+      document.querySelector('.home-section .text').textContent = firstLineContent;
+  
+      document.getElementById(contentId).classList.add('active');
     });
+  });
+
+  txtContents.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const contentId = this.getAttribute('data-content');
+      const contents  = document.querySelectorAll('.content');
+      
+      // Hide default content
+      defaultContent.style.display = 'none';
+      
+      // Fetch content from text file
+      fetch('data/' + contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
+          .then(response => response.text())
+          .then(text => {
+              // Show the clicked content
+              console.log('Clicked link with data-content:', contentId);
+              const contentElement = document.getElementById(contentId);
+              contentElement.innerHTML = text;
+              contentElement.style.display = 'block';
+          })
+          .catch(error => console.error('Error fetching content:', error));
+      
+      // Hide other contents
+      // contents.forEach(function(content) {
+      //     if (content.id !== contentId) {
+      //         content.style.display = 'none';
+      //     }
+      // });
+    });
+  });
 });
+  
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const sidebarLinks = document.querySelectorAll('.sidebar-link');
+//     const defaultContent = document.getElementById('content0');
+    
+//     // Function to show default content
+//     function showDefaultContent() {
+//         defaultContent.style.display = 'block'; // Display default content
+//     }
+    
+//     // Show default content when the page loads
+//     showDefaultContent();
+    
+//     // Event listeners for sidebar links
+//     sidebarLinks.forEach(function(link) {
+//         link.addEventListener('click', function(event) {
+//             event.preventDefault();
+//             const contentId = this.getAttribute('data-content');
+//             const contents = document.querySelectorAll('.content');
+            
+//             // Hide default content
+//             defaultContent.style.display = 'none';
+            
+//             // Fetch content from text file
+//             fetch(contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
+//                 .then(response => response.text())
+//                 .then(text => {
+//                     // Show the clicked content
+//                     console.log('Clicked link with data-content:', contentId);
+//                     const contentElement = document.getElementById(contentId);
+//                     contentElement.innerHTML = text;
+//                     contentElement.style.display = 'block';
+//                 })
+//                 .catch(error => console.error('Error fetching content:', error));
+            
+//             // Hide other contents
+//             contents.forEach(function(content) {
+//                 if (content.id !== contentId) {
+//                     content.style.display = 'none';
+//                 }
+//             });
+//         });
+//     });
+// });
 
 let arrow = document.querySelectorAll(".arrow");
 for (var i = 0; i < arrow.length; i++) {

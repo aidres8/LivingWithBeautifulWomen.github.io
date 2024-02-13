@@ -20,8 +20,6 @@ body{background: #f5f6fa;}
 .sidebar.close .profile .profile_name{color: #ffffff;margin: 10px 0 0px;font-size: 14px}
 .sidebar.close .profile .job{color: rgb(206, 240, 253);font-size: 9px}
 
-
-
 .sidebar .slink{height: 100%;padding: 0px 0 150px 0;overflow: auto;}
 .sidebar.close .slink{overflow: visible;}
 .sidebar .slink::-webkit-scrollbar{display: auto;}
@@ -57,4 +55,22 @@ body{background: #f5f6fa;}
 .home-section .home-content .bx-menu{cursor: pointer;margin-right: 10px;}
 .home-section .home-content .text{font-size: 26px;font-weight: 600;}
 
+.main-content {margin-left: 220px; /* Sidebar width (200px) + margin (20px) */}
+.content {display: none;}
+.content.active {display: block;}
 
+#list-3row {list-style-type: none;margin:0;padding: 0;margin-top: 20px !important;}
+#list-3row li {display: inline-block;
+    width: calc(33.33% - 10px); /* Adjust width to fit 3 items per row with margin */
+    margin-right: 10px; /* Adjust spacing between links */
+    margin-right: 10px; /* Adjust spacing between links */
+    margin-bottom: 10px; /* Adjust spacing between rows */
+    vertical-align: top; /* Align items at the top of the row */
+}
+#list-3row li:nth-child(3n+3) {
+    margin-right: 0; /* Clear margin for the last item in each row */
+    clear: both; /* Clear float after every third item */
+}
+
+#list-2row {list-style-type: none;margin: 0;padding: 0;}
+#list-2row li {display: inline;margin-right: 10px;}

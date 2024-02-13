@@ -5,20 +5,8 @@
   padding: 10px;
 }
 
-.sidebar {
-  width: 200px;
-  background-color: #f4f4f4;
-  float: left;
-}
+.sidebar {width: 200px;background-color: #f4f4f4;float: left;}
 
-.main-content {
-  margin-left: 220px; /* Sidebar width (200px) + margin (20px) */
-}
-
-.content {
-  display: none;
-}
-
-.content.active {
-  display: block;
-}
+.main-content {margin-left: 220px; /* Sidebar width (200px) + margin (20px) */}
+.content {display: none;}
+.content.active {display: block;}
