@@ -59,12 +59,14 @@ body{background: #f5f6fa;}
 .content {display: none;}
 .content.active {display: block;}
 
+.content_txt {display: none;}
+.content_txt.active {display: block;}
+
 #list-3row {list-style-type: none;margin:0;padding: 0;margin-top: 20px !important;}
 #list-3row li {display: inline-block;
     width: calc(33.33% - 10px); /* Adjust width to fit 3 items per row with margin */
-    margin-right: 10px; /* Adjust spacing between links */
-    margin-right: 10px; /* Adjust spacing between links */
-    margin-bottom: 10px; /* Adjust spacing between rows */
+    margin-right: 5px; /* Adjust spacing between links */
+    margin-bottom: 5px; /* Adjust spacing between rows */
     vertical-align: top; /* Align items at the top of the row */
 }
 #list-3row li:nth-child(3n+3) {
