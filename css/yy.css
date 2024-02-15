@@ -6,7 +6,7 @@
 body{background: #f5f6fa;}
 
 .sidebar{background: #11101d; position: fixed;top: 0;left: 0;height: 100%;width: 260px;z-index: 100;transition: all 0.5s ease;}
-.sidebar.close{width: 78px;}
+.sidebar.close{width: 0px;}
 
 .sidebar .profile{margin-bottom: 30px;text-align: center;}
 .sidebar .profile img{height: 72px;width: 150px; border-radius: 16px;margin: 0 auto; transition: all 0.5s ease;}
@@ -15,20 +15,20 @@ body{background: #f5f6fa;}
 .sidebar .profile .job{color: rgb(206, 240, 253);font-size: 20px}
 
 .sidebar.close .profile{background: none;}
-.sidebar.close .profile{width: 78px;}
-.sidebar.close .profile img{height: 36px;width: 75px; border-radius: 16px;margin: 0 auto; transition: all 0.5s ease;}
-.sidebar.close .profile .profile_name{color: #ffffff;margin: 10px 0 0px;font-size: 14px}
-.sidebar.close .profile .job{color: rgb(206, 240, 253);font-size: 9px}
+.sidebar.close .profile{width: 0px;}
+.sidebar.close .profile img{height: 36px;width: 0px; border-radius: 16px;margin: 0 auto; transition: all 0.5s ease;}
+.sidebar.close .profile .profile_name{color: #ffffff;margin: 10px 0 0px;font-size: 0px}
+.sidebar.close .profile .job{color: rgb(206, 240, 253);font-size: 0px}
 
 .sidebar .slink{height: 100%;padding: 0px 0 150px 0;overflow: auto;}
-.sidebar.close .slink{overflow: visible;}
+.sidebar.close .slink{overflow: hidden;}
 .sidebar .slink::-webkit-scrollbar{display: auto;}
 
 .sidebar .slink li{position: relative;list-style: none;transition: all 0.4s ease;}
 .sidebar .slink li:hover{background: #1d1b31;}
 
 .sidebar .slink li .iocn-link{display: flex;align-items: center;justify-content: space-between;}
-.sidebar.close .slink li .iocn-link{display: block}
+.sidebar.close .slink li .iocn-link{display: none}
 .sidebar .slink li i{height: 50px;min-width: 78px;text-align: center;line-height: 50px;color: #fff;font-size: 20px;cursor: pointer;transition: all 0.3s ease;}
 .sidebar .slink li.showMenu i.arrow{transform: rotate(-180deg);}
 .sidebar.close .slink i.arrow{display: none;}
@@ -48,7 +48,7 @@ body{background: #f5f6fa;}
 .sidebar .slink li:hover .sub-menu.blank{top: 50%;transform: translateY(-50%);}
 
 .home-section{position: relative;background: #E4E9F7;height: 100vh;left: 260px;width: calc(100% - 260px);transition: all 0.5s ease;padding: 12px;}
-.sidebar.close ~ .home-section{left: 78px;width: calc(100% - 78px);}
+.sidebar.close ~ .home-section{left: 0px;width: calc(100% - 78px);}
 
 .home-content{display: flex;align-items: center;flex-wrap: wrap;}
 .home-section .home-content .bx-menu,.home-section .home-content .text{color: #11101d;font-size: 35px;}
