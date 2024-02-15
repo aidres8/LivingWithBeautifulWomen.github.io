@@ -48,7 +48,7 @@ body{background: #f5f6fa;}
 .sidebar .slink li:hover .sub-menu.blank{top: 50%;transform: translateY(-50%);}
 
 .home-section{position: relative;background: #E4E9F7;height: 100vh;left: 260px;width: calc(100% - 260px);transition: all 0.5s ease;padding: 12px;}
-.sidebar.close ~ .home-section{left: 0px;width: calc(100% - 78px);}
+.sidebar.close ~ .home-section{left: 0px;width: calc(100%);}
 
 .home-content{display: flex;align-items: center;flex-wrap: wrap;}
 .home-section .home-content .bx-menu,.home-section .home-content .text{color: #11101d;font-size: 35px;}
