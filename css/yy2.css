@@ -1,0 +1,43 @@
+/* body */
+body {background: #f5f6fa;}
+
+/* right side*/
+.main {
+    position: relative;
+    background: #E4E9F7;
+    height: 100vh;left: 260px;width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    padding: 12px;
+}
+
+/*mysidebar*/
+.mysidebar {
+    background: #11101d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+.mysidebar .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.mysidebar .profile img {
+    height: 72px;
+    width: 150px;
+    border-radius: 16px;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+.mysidebar .profile .profile_name {
+    color: #ffffff;
+    margin: 10px 0 0px;
+    font-size: 36px
+}
+.mysidebar .profile .profile_slogan {
+    color: rgb(206, 240, 253);
+    font-size: 20px
+}
