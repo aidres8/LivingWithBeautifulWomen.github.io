@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');    //
     const txtContents  = document.querySelectorAll('.txt');
     const defaultContent = document.getElementById('content0');
     const txtShow  = document.querySelectorAll('.content_txt');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sidebarLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
             event.preventDefault();
-            const contentId = this.getAttribute('data-content');
+            const contentId = this.getAttribute('data-book');
             const contents = document.querySelectorAll('.content');
 
             defaultContent.style.display = 'none';
@@ -41,12 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
             defaultContent.style.display = 'none';
 
             // Fetch content from text file
+            // fetch('data/' + contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
             fetch('data/' + contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
                 .then(response => response.text())
                 .then(text => {
                     // Show the clicked content
                     console.log('Clicked link with data-content:', contentId);
-                    const contentElement = document.getElementById(contentId);
+                    // const contentElement = document.getElementById(contentId);
+                    const contentElement = document.getElementById("chapter_detail");
                     contentElement.innerText = text;
                     contentElement.style.display = 'block';
                     contentElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scrolls to the top of the content with smooth animation
