@@ -34,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     txtContents.forEach(function (link) {
         link.addEventListener('click', function (event) {
             event.preventDefault();
-            const contentId = this.getAttribute('data-content');
-            const chapterId = this.getAttribute('data-chapter');
+            const contentId = this.getAttribute('data-chapter2content');
             const contents = document.querySelectorAll('.content_txt');
 
             // Hide default content
@@ -43,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Fetch content from text file
             // fetch('data/' + contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
-            fetch('data/' + contentId + '.txt') // Assuming file names are content1.txt, content2.txt, etc.
+            fetch(contentId) // Assuming file names are content1.txt, content2.txt, etc.
                 .then(response => response.text())
                 .then(text => {
                     // Show the clicked content
-                    console.log('Clicked link with data-content:', contentId);
+                    console.log('Clicked link with data-chapter2content:', contentId);
                     // const contentElement = document.getElementById(contentId);
                     const contentElement = document.getElementById("chapter_detail");
                     contentElement.innerText = text;
