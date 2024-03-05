@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (event) {
             event.preventDefault();
             const contentId = this.getAttribute('data-content');
+            const chapterId = this.getAttribute('data-chapter');
             const contents = document.querySelectorAll('.content_txt');
 
             // Hide default content
